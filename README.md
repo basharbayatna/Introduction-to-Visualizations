@@ -3,7 +3,8 @@
 This notebook analyzes how cumulative interest grows over time for a $400,000 loan at two different annual interest rates: **3%** and **5%**.  
 
 ## Dataset
-The dataset contains monthly cumulative interest for each interest rate over the term of the loan.  
+The dataset contains monthly cumulative interest for each interest rate over the term of the loan.  [cumulative_interest - cumulative_interest (2).csv](https://github.com/user-attachments/files/21969260/cumulative_interest.-.cumulative_interest.2.csv)
+
 
 ## Steps Performed
 1. Loaded the dataset using `pandas`.  
