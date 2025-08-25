@@ -1,53 +1,33 @@
-# Cumulative Interest Visualization
+# Cumulative Interest Analysis for a $400,000 Loan
 
-This project demonstrates the growth of cumulative interest over time using a simple dataset and Python visualization.
+This notebook analyzes how cumulative interest grows over time for a $400,000 loan at two different annual interest rates: **3%** and **5%**.  
 
 ## Dataset
+The dataset contains monthly cumulative interest for each interest rate over the term of the loan.  
 
-The dataset contains monthly cumulative interest for two interest rates (3% and 5%). Columns include:
-
-- `Month`: Month number (1–360 for 30 years)  
-- `3% Cumulative Interest`: Total interest accumulated at 3%  
-- `5% Cumulative Interest`: Total interest accumulated at 5%  
-
-Original dataset path: `/content/drive/MyDrive/AXSOSACADEMY/01-Fundamentals/Week03/Data/cumulative_interest - cumulative_interest.csv`
-
-## What I Did
-
-1. **Loaded the Data**  
-   - Read the CSV file into a Pandas DataFrame and displayed the first few rows.
-
-2. **Plotted the Cumulative Interest**  
-   - Used Matplotlib to plot `Month` on the x-axis and cumulative interest on the y-axis.  
-   - Plotted both 3% and 5% cumulative interest on the same graph.  
-   - Added labels, legend, and title for clarity.
+## Steps Performed
+1. Loaded the dataset using `pandas`.  
+2. Selected and explored relevant columns: `Month`, `3% Cumulative Interest`, `5% Cumulative Interest`.  
+3. Plotted cumulative interest over time using `matplotlib`.  
 
 ## Key Insights
+- Cumulative interest increases over time due to compounding.  
+- **3% interest** grows steadily over the loan period.  
+- **5% interest** grows much faster, showing the impact of higher interest rates.  
+- The dataset reports cumulative totals, which explains why the first months already show substantial amounts.  
 
-- Interest accumulates significantly over time. After 30 years:
-  - **3% interest** grows to around **$12,000** from $1,000.  
-  - **5% interest** grows to around **$50,000** from $1,000.  
-- The difference between 3% and 5% rates increases over time, highlighting the power of compounding.  
-- Small differences in interest rates can lead to large differences in returns over long periods.
+### Figure: Cumulative Interest Over Time
 
-## Figures
+```python
+import matplotlib.pyplot as plt
 
-**Cumulative Interest Over 30 Years**
+X = df['Month']
+Y1 = df['3% Cumulative Interest']
+Y2 = df['5% Cumulative Interest']
 
-![Cumulative Interest Graph](figures/cumulative_interest.png)  
-*Shows growth of cumulative interest for 3% and 5% interest rates over 30 years.*
-
-**Monthly Interest Growth**
-
-- 3% rate: increases gradually month by month.  
-- 5% rate: faster growth, especially in later months due to compounding.
-
-## Tools Used
-
-- Python 3  
-- Pandas  
-- Matplotlib
-
-## Author
-
-- Bashar Bayatna
+fig, ax = plt.subplots()
+ax.plot(X, Y1 , label= '3% Cumulative Interest')
+ax.plot(X, Y2, label = '5% Cumulative Interest')
+ax.legend()
+ax.set(ylabel = 'Interest Fees in $', xlabel= 'Months', title= 'Cumulative Interest Over Time for $400,000 Loan')
+plt.show()
