@@ -19,16 +19,5 @@ The dataset contains monthly cumulative interest for each interest rate over the
 
 ### Figure: Cumulative Interest Over Time
 
-```python
-import matplotlib.pyplot as plt
+<img width="597" height="455" alt="Cumulative Intrest Over 30 Years" src="https://github.com/user-attachments/assets/961a165c-e967-4b41-8831-80a4d70ba27b" />
 
-X = df['Month']
-Y1 = df['3% Cumulative Interest']
-Y2 = df['5% Cumulative Interest']
-
-fig, ax = plt.subplots()
-ax.plot(X, Y1 , label= '3% Cumulative Interest')
-ax.plot(X, Y2, label = '5% Cumulative Interest')
-ax.legend()
-ax.set(ylabel = 'Interest Fees in $', xlabel= 'Months', title= 'Cumulative Interest Over Time for $400,000 Loan')
-plt.show()
